@@ -19,22 +19,25 @@ public class TestCases extends Before {
 	@Test (priority=1) 
 	public void signUp () throws InterruptedException {
 driver.get("https://magento.softwaretestingboard.com/customer/account/create/");
-Thread.sleep(3000);
-
-driver.findElement(By.xpath("//*[@id=\"firstname\"]")).sendKeys("Lujain");
-		driver.findElement(By.xpath("//*[@id=\"lastname\"]")).sendKeys("Nahya");
-		driver.findElement(By.xpath("//*[@id=\"email_address\"]")).sendKeys("lujain.nahya64@gmail.com");
-		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("LujainNahya66");
-		driver.findElement(By.xpath("//*[@id=\"password-confirmation\"]")).sendKeys("LujainNahya66");
+Thread.sleep(2000);
+String FirstName="Lujain";
+String LastName="Nahya";
+String Email="lujain.nahya63@gmail.com";
+String Password="LujainNahya66";
+driver.findElement(By.xpath("//*[@id=\"firstname\"]")).sendKeys(FirstName);
+		driver.findElement(By.xpath("//*[@id=\"lastname\"]")).sendKeys(LastName);
+		driver.findElement(By.xpath("//*[@id=\"email_address\"]")).sendKeys(Email);
+		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys(Password);
+		driver.findElement(By.xpath("//*[@id=\"password-confirmation\"]")).sendKeys(Password);
 		driver.findElement(By.xpath("//*[@id=\"form-validate\"]/div/div[1]/button")).click();
 		driver.get(
 				"https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS9jdXN0b21lci9hY2NvdW50L2xvZ291dFN1Y2Nlc3Mv/");
 
-		driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("lujain.nahya64@gmail.com");
-		driver.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys("LujainNahya66");
+		driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys(Email);
+		driver.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys(Password);
 		driver.findElement(By.xpath("//*[@id=\"send2\"]")).click();
 
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 		String welcomeMsg = driver.findElement(By.xpath("/html/body/div[1]/header/div[1]/div/ul/li[1]/span")).getText();
 
@@ -62,15 +65,12 @@ driver.findElement(By.xpath("//*[@id=\"firstname\"]")).sendKeys("Lujain");
 
 	@Test (priority=4)
 	public void checkout () throws InterruptedException {
-		driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/a")).click();
-		driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("lujain.nahya64@gmail.com");
-		driver.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys("LujainNahya66");
-		driver.findElement(By.xpath("//*[@id=\"send2\"]")).click();
-Thread.sleep(3000);
+		driver.get("https://magento.softwaretestingboard.com/");
+Thread.sleep(2000);
 
-		driver.findElement(By.xpath("/html/body/div[2]/header/div[2]/div[1]/a")).click();
-		driver.findElement(By.xpath("//*[@id=\"top-cart-btn-checkout\"]")).click();
-		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html/body/div[1]/header/div[2]/div[1]/a")).click();
+		driver.findElement(By.id("top-cart-btn-checkout")).click();
+		Thread.sleep(2000);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 driver.findElement(By.name("company")).sendKeys("IT Company");
 
@@ -100,11 +100,11 @@ Assert.assertAll();
 //	public void AnotherAssertPrice() throws InterruptedException {		
 //
 //		driver.findElement(By.xpath("/html/body/div[1]/header/div[1]/div/ul/li[2]/a")).click();
-//		Thread.sleep(3000);
+//		Thread.sleep(2000);
 //		driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("lujain.nahya64@gmail.com");
 //		driver.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys("LujainNahya66");
 //		driver.findElement(By.xpath("//*[@id=\"send2\"]")).click();
-//		Thread.sleep(3000);
+//		Thread.sleep(2000);
 //		driver.findElement(By.xpath("/html/body/div[1]/header/div[2]/div[1]"));
 //driver.findElement(By.xpath("/html/body/div[1]/header/div[2]/div[1]")).click();
 //		String total= driver.findElement(By.xpath("//*[@id=\"minicart-content-wrapper\"]/div[2]/div[2]/div/span/span")).getText();
@@ -114,13 +114,9 @@ Assert.assertAll();
 //	}
 	@Test (priority=5)
 	public void myAccount () throws InterruptedException {
-		driver.manage().window().maximize();
-		driver.findElement(By.xpath("/html/body/div[1]/header/div[1]/div/ul/li[2]/a")).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("lujain.nahya64@gmail.com");
-		driver.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys("LujainNahya66");
-		driver.findElement(By.xpath("//*[@id=\"send2\"]")).click();
-Thread.sleep(3000);
+		driver.get("https://magento.softwaretestingboard.com/");
+
+Thread.sleep(2000);
 for(int i=0;i<5;i++) {
 	Thread.sleep(1000);
 
@@ -129,11 +125,11 @@ for(int i=0;i<5;i++) {
 		Thread.sleep(1000);
 
 		driver.findElement(By.xpath("//*[@id=\"block-collapsible-nav\"]/ul/li[2]/a")).click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 	
 		driver.findElement(By.xpath("//*[@id=\"my-orders-table\"]/tbody/tr[1]/td[6]/a[2]")).click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 		driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[3]/div/div[2]/div[1]/ul/li[1]/button")).click();
 		Thread.sleep(5000);
@@ -149,13 +145,12 @@ driver.findElement(By.xpath("//*[@id=\"checkout-shipping-method-load\"]/table/tb
 
 	WebElement button=driver.findElement(By.xpath("//*[@id=\"shipping-method-buttons-container\"]/div/button"));
 
-//	WebElement button = driver.findElement(By.cssSelector(".button.action.continue.primary"));
 actions.moveToElement(button).click().build().perform();
 
 	
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id=\"checkout-payment-method-load\"]/div/div/div[2]/div[2]/div[4]/div"));
 		Thread.sleep(2000);
 
@@ -167,11 +162,11 @@ actions.moveToElement(button).click().build().perform();
 	@Test (priority=6)
 	public void AssertReOrders() throws InterruptedException{
 		driver.findElement(By.xpath("/html/body/div[1]/header/div[1]/div/ul/li[2]/a")).click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("lujain.nahya64@gmail.com");
 		driver.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys("LujainNahya66");
 		driver.findElement(By.xpath("//*[@id=\"send2\"]")).click();
-Thread.sleep(3000);
+Thread.sleep(2000);
 Thread.sleep(1000);
 
 driver.findElement(By.xpath("/html/body/div[1]/header/div[1]/div/ul/li[2]/span/button")).click();
@@ -179,11 +174,11 @@ driver.findElement(By.xpath("/html/body/div[1]/header/div[1]/div/ul/li[2]/div/ul
 Thread.sleep(1000);
 
 driver.findElement(By.xpath("//*[@id=\"block-collapsible-nav\"]/ul/li[2]/a")).click();
-Thread.sleep(3000);
+Thread.sleep(2000);
 
 
 driver.findElement(By.xpath("//*[@id=\"my-orders-table\"]/tbody/tr[1]/td[6]/a[2]")).click();
-Thread.sleep(3000);
+Thread.sleep(2000);
 		String Total=driver.findElement(By.xpath("//*[@id=\"cart-totals\"]/div/table/tbody/tr[1]/td/span")).getText();
 		String Expected="$552.00";
 		Assert.assertEquals(Total, Expected);
@@ -194,10 +189,8 @@ Thread.sleep(3000);
 
 	@Test(priority=3)
 	public void choosingItemsRandomly () throws InterruptedException {
-		driver.findElement(By.xpath("/html/body/div[1]/header/div[1]/div/ul/li[2]/a")).click();
-		driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("lujain.nahya64@gmail.com");
-		driver.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys("LujainNahya66");
-		driver.findElement(By.xpath("//*[@id=\"send2\"]")).click();
+		driver.get("https://magento.softwaretestingboard.com/");
+
 Thread.sleep(4000);
 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 String [] basket = {"https://magento.softwaretestingboard.com/radiant-tee.html","https://magento.softwaretestingboard.com/breathe-easy-tank.html","https://magento.softwaretestingboard.com/argus-all-weather-tank.html","https://magento.softwaretestingboard.com/hero-hoodie.html","https://magento.softwaretestingboard.com/fusion-backpack.html"};
@@ -215,29 +208,29 @@ String [] basket = {"https://magento.softwaretestingboard.com/radiant-tee.html",
 for (int i=0; i<3;i++) {
 	driver.get(basket[0]);
 
-	Thread.sleep(3000);
+	Thread.sleep(2000);
 	
 
 	 String [] Color= {"Blue", "Orange", "Purple" };
 		int Randomcolor = random.nextInt(3);
 		WebElement color=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[2]/div"));
 		List <WebElement> rColor = color.findElements(By.tagName("div"));
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		WebElement stop=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[1]/div"));
 		List <WebElement> Stop = stop.findElements(By.tagName("div"));
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 		Stop.get(Randomsize).click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 		rColor.get(Randomcolor).click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 driver.findElement(By.xpath("//*[@id=\"product-addtocart-button\"]")).click();
-Thread.sleep(3000);
+Thread.sleep(2000);
 
 }
 driver.navigate().back();
-Thread.sleep(3000);
+Thread.sleep(2000);
 
 			}
 			if(j==1) {
@@ -245,7 +238,7 @@ Thread.sleep(3000);
 			for (int i=0; i<2;i++) {
 				driver.get(basket[1]);
 
-				Thread.sleep(3000);
+				Thread.sleep(2000);
 
 				WebElement stop=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[1]/div"));
 				List <WebElement> Stop = stop.findElements(By.tagName("div"));
@@ -253,17 +246,17 @@ Thread.sleep(3000);
 					int RandomScolor = random.nextInt(3);
 					WebElement Scolor=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[2]/div"));
 					List <WebElement> SColor = Scolor.findElements(By.tagName("div"));
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 
 					Stop.get(Randomsize).click();
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 					SColor.get(RandomScolor).click();
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 			driver.findElement(By.xpath("//*[@id=\"product-addtocart-button\"]")).click();
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 }
 			driver.navigate().back();
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 }
 				if(j==2) {
 					
@@ -271,7 +264,7 @@ Thread.sleep(3000);
 						for (int i=0; i<4;i++) {
 							driver.get(basket[2]);
 
-							Thread.sleep(3000);
+							Thread.sleep(2000);
 							WebElement stop=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[1]/div"));
 							List <WebElement> Stop = stop.findElements(By.tagName("div"));
 							 String [] cgray= {"Gray" };
@@ -279,18 +272,18 @@ Thread.sleep(3000);
 
 							WebElement Gray=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[2]/div"));
 							List <WebElement> gray = Gray.findElements(By.tagName("div"));
-							Thread.sleep(3000);
+							Thread.sleep(2000);
 
 							Stop.get(Randomsize).click();
-							Thread.sleep(3000);
+							Thread.sleep(2000);
 
 							gray.get(RandomSgray).click();
-							Thread.sleep(3000);
+							Thread.sleep(2000);
 							driver.findElement(By.xpath("//*[@id=\"product-addtocart-button\"]")).click();
-							Thread.sleep(3000);
+							Thread.sleep(2000);
 }
 						driver.navigate().back();
-						Thread.sleep(3000);
+						Thread.sleep(2000);
 }
 				
 					if(j==3) {
@@ -298,39 +291,44 @@ Thread.sleep(3000);
 						for (int i=0; i<1;i++) {
 							driver.get(basket[3]);
 
-							Thread.sleep(3000);
+							Thread.sleep(2000);
 
 							WebElement stop=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[1]/div"));
 							List <WebElement> Stop = stop.findElements(By.tagName("div"));
-							Thread.sleep(3000);
+							Thread.sleep(2000);
 
 							 String [] RHColor= {"Black", "Gray", "Green" };
 								int RandomHcolor = random.nextInt(3);
 								WebElement Hcolor=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[2]/div"));
 								List <WebElement> HColor = Hcolor.findElements(By.tagName("div"));
-								Thread.sleep(3000);
+								Thread.sleep(2000);
 
 								Stop.get(Randomsize).click();
-								Thread.sleep(3000);
+								Thread.sleep(2000);
 								HColor.get(RandomHcolor).click();
-								Thread.sleep(3000);
+								Thread.sleep(2000);
 						driver.findElement(By.xpath("//*[@id=\"product-addtocart-button\"]")).click();
-						Thread.sleep(3000);
+						Thread.sleep(2000);
 					}driver.navigate().back();
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 }
 					if(j==4) {
-						for(int i=0; i<5; i++)
+						for(int i=0; i<1; i++)
 						{
 							driver.get(basket[4]);
 
-							Thread.sleep(3000);
+							Thread.sleep(2000);
 
+							driver.findElement(By.xpath("//*[@id=\"qty\"]")).sendKeys(Keys.DELETE);
+							driver.findElement(By.xpath("//*[@id=\"qty\"]")).sendKeys("5");
+
+							Thread.sleep(2000);
 							driver.findElement(By.xpath("//*[@id=\"product-addtocart-button\"]")).click();
-							Thread.sleep(3000);
+							Thread.sleep(1000);
+
 						}
 						driver.navigate().back();
-						Thread.sleep(3000);
+						Thread.sleep(2000);
 
 					}
 
