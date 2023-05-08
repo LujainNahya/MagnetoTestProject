@@ -324,7 +324,15 @@ String [] basket = {"https://magento.softwaretestingboard.com/radiant-tee.html",
 
 							driver.findElement(By.xpath("//*[@id=\"product-addtocart-button\"]")).click();
 							Thread.sleep(2000);
-
+							
+							//another way of doing it//
+//							driver.get(basket[4]);
+//							driver.findElement(By.id("qty")).sendKeys(Keys.DELETE+"5");
+//							Thread.sleep(2000);
+//
+//
+//							driver.findElement(By.xpath("//*[@id=\"product-addtocart-button\"]")).click();
+//							Thread.sleep(2000);
 						}
 						driver.navigate().back();
 						Thread.sleep(2000);
