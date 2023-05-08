@@ -136,7 +136,6 @@ for(int i=0;i<5;i++) {
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 driver.findElement(By.xpath("//*[@id=\"checkout-shipping-method-load\"]/table/tbody/tr[1]/td[1]/input")).click();
 
-//		driver.findElement(By.xpath("//*[@id=\"shipping-method-buttons-container\"]/div/button")).click();
 	driver.findElement(By.id("co-shipping-method-form"));
 	Thread.sleep(2000);
 
@@ -203,115 +202,115 @@ String [] basket = {"https://magento.softwaretestingboard.com/radiant-tee.html",
 
 			for(int j=0;j<basket.length;j++) {
 
-//			if(j==0) {
-//
-//for (int i=0; i<3;i++) {
-//	driver.get(basket[0]);
-//
-//	Thread.sleep(2000);
-//	
-//
-//	 String [] Color= {"Blue", "Orange", "Purple" };
-//		int Randomcolor = random.nextInt(3);
-//		WebElement color=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[2]/div"));
-//		List <WebElement> rColor = color.findElements(By.tagName("div"));
-//		Thread.sleep(2000);
-//		WebElement stop=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[1]/div"));
-//		List <WebElement> Stop = stop.findElements(By.tagName("div"));
-//		Thread.sleep(2000);
-//
-//		Stop.get(Randomsize).click();
-//		Thread.sleep(2000);
-//
-//		rColor.get(Randomcolor).click();
-//		Thread.sleep(2000);
-//driver.findElement(By.xpath("//*[@id=\"product-addtocart-button\"]")).click();
-//Thread.sleep(2000);
-//
-//}
-//driver.navigate().back();
-//Thread.sleep(2000);
-//
-//			}
-//			if(j==1) {
-//				
-//			for (int i=0; i<2;i++) {
-//				driver.get(basket[1]);
-//
-//				Thread.sleep(2000);
-//
-//				WebElement stop=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[1]/div"));
-//				List <WebElement> Stop = stop.findElements(By.tagName("div"));
-//				 String [] RSColor= {"Purple", "White", "Yellow" };
-//					int RandomScolor = random.nextInt(3);
-//					WebElement Scolor=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[2]/div"));
-//					List <WebElement> SColor = Scolor.findElements(By.tagName("div"));
-//					Thread.sleep(2000);
-//
-//					Stop.get(Randomsize).click();
-//					Thread.sleep(2000);
-//					SColor.get(RandomScolor).click();
-//					Thread.sleep(2000);
-//			driver.findElement(By.xpath("//*[@id=\"product-addtocart-button\"]")).click();
-//			Thread.sleep(2000);
-//}
-//			driver.navigate().back();
-//			Thread.sleep(2000);
-//}
-//				if(j==2) {
-//					
-//						
-//						for (int i=0; i<4;i++) {
-//							driver.get(basket[2]);
-//
-//							Thread.sleep(2000);
-//							WebElement stop=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[1]/div"));
-//							List <WebElement> Stop = stop.findElements(By.tagName("div"));
-//							 String [] cgray= {"Gray" };
-//								int RandomSgray = random.nextInt(1);
-//
-//							WebElement Gray=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[2]/div"));
-//							List <WebElement> gray = Gray.findElements(By.tagName("div"));
-//							Thread.sleep(2000);
-//
-//							Stop.get(Randomsize).click();
-//							Thread.sleep(2000);
-//
-//							gray.get(RandomSgray).click();
-//							Thread.sleep(2000);
-//							driver.findElement(By.xpath("//*[@id=\"product-addtocart-button\"]")).click();
-//							Thread.sleep(2000);
-//}
-//						driver.navigate().back();
-//						Thread.sleep(2000);
-//}
-//				
-//					if(j==3) {
-//						
-//						for (int i=0; i<1;i++) {
-//							driver.get(basket[3]);
-//
-//							Thread.sleep(2000);
-//
-//							WebElement stop=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[1]/div"));
-//							List <WebElement> Stop = stop.findElements(By.tagName("div"));
-//							Thread.sleep(2000);
-//
-//							 String [] RHColor= {"Black", "Gray", "Green" };
-//								int RandomHcolor = random.nextInt(3);
-//								WebElement Hcolor=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[2]/div"));
-//								List <WebElement> HColor = Hcolor.findElements(By.tagName("div"));
-//								Thread.sleep(2000);
-//
-//								Stop.get(Randomsize).click();
-//								Thread.sleep(2000);
-//								HColor.get(RandomHcolor).click();
-//								Thread.sleep(2000);
-//						driver.findElement(By.xpath("//*[@id=\"product-addtocart-button\"]")).click();
-//						Thread.sleep(2000);
-//					}driver.navigate().back();
-//					Thread.sleep(2000);
-//}
+			if(j==0) {
+
+for (int i=0; i<3;i++) {
+	driver.get(basket[0]);
+
+	Thread.sleep(2000);
+	
+
+	 String [] Color= {"Blue", "Orange", "Purple" };
+		int Randomcolor = random.nextInt(3);
+		WebElement color=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[2]/div"));
+		List <WebElement> rColor = color.findElements(By.tagName("div"));
+		Thread.sleep(2000);
+		WebElement stop=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[1]/div"));
+		List <WebElement> Stop = stop.findElements(By.tagName("div"));
+		Thread.sleep(2000);
+
+		Stop.get(Randomsize).click();
+		Thread.sleep(2000);
+
+		rColor.get(Randomcolor).click();
+		Thread.sleep(2000);
+driver.findElement(By.xpath("//*[@id=\"product-addtocart-button\"]")).click();
+Thread.sleep(2000);
+
+}
+driver.navigate().back();
+Thread.sleep(2000);
+
+			}
+			if(j==1) {
+				
+			for (int i=0; i<2;i++) {
+				driver.get(basket[1]);
+
+				Thread.sleep(2000);
+
+				WebElement stop=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[1]/div"));
+				List <WebElement> Stop = stop.findElements(By.tagName("div"));
+				 String [] RSColor= {"Purple", "White", "Yellow" };
+					int RandomScolor = random.nextInt(3);
+					WebElement Scolor=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[2]/div"));
+					List <WebElement> SColor = Scolor.findElements(By.tagName("div"));
+					Thread.sleep(2000);
+
+					Stop.get(Randomsize).click();
+					Thread.sleep(2000);
+					SColor.get(RandomScolor).click();
+					Thread.sleep(2000);
+			driver.findElement(By.xpath("//*[@id=\"product-addtocart-button\"]")).click();
+			Thread.sleep(2000);
+}
+			driver.navigate().back();
+			Thread.sleep(2000);
+}
+				if(j==2) {
+					
+						
+						for (int i=0; i<4;i++) {
+							driver.get(basket[2]);
+
+							Thread.sleep(2000);
+							WebElement stop=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[1]/div"));
+							List <WebElement> Stop = stop.findElements(By.tagName("div"));
+							 String [] cgray= {"Gray" };
+								int RandomSgray = random.nextInt(1);
+
+							WebElement Gray=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[2]/div"));
+							List <WebElement> gray = Gray.findElements(By.tagName("div"));
+							Thread.sleep(2000);
+
+							Stop.get(Randomsize).click();
+							Thread.sleep(2000);
+
+							gray.get(RandomSgray).click();
+							Thread.sleep(2000);
+							driver.findElement(By.xpath("//*[@id=\"product-addtocart-button\"]")).click();
+							Thread.sleep(2000);
+}
+						driver.navigate().back();
+						Thread.sleep(2000);
+}
+				
+					if(j==3) {
+						
+						for (int i=0; i<1;i++) {
+							driver.get(basket[3]);
+
+							Thread.sleep(2000);
+
+							WebElement stop=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[1]/div"));
+							List <WebElement> Stop = stop.findElements(By.tagName("div"));
+							Thread.sleep(2000);
+
+							 String [] RHColor= {"Black", "Gray", "Green" };
+								int RandomHcolor = random.nextInt(3);
+								WebElement Hcolor=driver.findElement(By.xpath("//*[@id=\"product-options-wrapper\"]/div/div/div[2]/div"));
+								List <WebElement> HColor = Hcolor.findElements(By.tagName("div"));
+								Thread.sleep(2000);
+
+								Stop.get(Randomsize).click();
+								Thread.sleep(2000);
+								HColor.get(RandomHcolor).click();
+								Thread.sleep(2000);
+						driver.findElement(By.xpath("//*[@id=\"product-addtocart-button\"]")).click();
+						Thread.sleep(2000);
+					}driver.navigate().back();
+					Thread.sleep(2000);
+}
 					if(j==4) {
 						for(int i=0; i<5; i++)
 						{
